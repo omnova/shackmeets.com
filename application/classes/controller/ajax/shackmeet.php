@@ -87,10 +87,10 @@ class Controller_Ajax_Shackmeet extends Controller_Ajax_Base
             $attendee->insert();
           }
 
-          if ($inputs['send_notifications'] == 1)
+          if ($inputs['send_notifications'] == 1 && Shackmeetsconfig::enableMessaging)
             $this->notify_on_add($meet, $location);
           
-          if ($inputs['post_announcement'] == 1)
+          if ($inputs['post_announcement'] == 1 && Shackmeetsconfig::enablePosting)
           {
             $this->post_announcement($meet, $location);
           }
@@ -251,17 +251,11 @@ class Controller_Ajax_Shackmeet extends Controller_Ajax_Base
           $location->order_id = 1;
           $location->update();
           
-          //if ($location->saved())
-          //{
+          if (Shackmeetsconfig::enableMessaging)
             $this->notify_on_update($meet, $location);            
           
-            $ajax_response->data = $meet->meet_id;
-            $ajax_response->success = true;
-          // }
-          // else
-          // {
-            // $ajax_response->add_error(null, null, null, 'Unable to save meet location.');
-          // }
+          $ajax_response->data = $meet->meet_id;
+          $ajax_response->success = true;
         }
         else
         {
@@ -510,7 +504,8 @@ class Controller_Ajax_Shackmeet extends Controller_Ajax_Base
       $meet->last_announcement_date = date("Y-m-d H:i:s");
       $meet->update();
 
-      $this->post_reminder($meet, $location);
+      if (Shackmeetsconfig::enablePosting)
+        $this->post_reminder($meet, $location);
 
       $ajax_response->success = true;
     }
@@ -734,8 +729,9 @@ class Controller_Ajax_Shackmeet extends Controller_Ajax_Base
       
       $subject = 'Shackmeet Canceled - ' . $meet->title;
       $body = $this->build_cancel_message($meet, $location);
-      
-      $this->notify_attendees($meet, 3, $subject, $body);
+
+      if (Shackmeetsconfig::enableMessaging)
+        $this->notify_attendees($meet, 3, $subject, $body);
       
       $ajax_response->success = true;
     }
