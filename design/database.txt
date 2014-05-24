@@ -1,0 +1,32 @@
+user
+- username (key)
+
+country
+- country_id
+- name
+- has_states
+
+state
+- state_id
+- country_id
+- name
+
+meet
+- meet_id
+- title
+- description
+- country_id
+- state_id
+- created_by
+- created_timestamp
+- changed_timestamp
+- start_date
+- start_time
+- end_date
+- end_time
+
+attendee
+- username (key)
+- meet_id (key)
+- message_on_update
+

@@ -1,0 +1,343 @@
+
+/* Overrides */
+
+* 
+{
+  margin: 0;
+  padding: 0;
+}
+
+a
+{
+  color: #FFFFFF;
+	text-decoration: none;
+}
+
+a:hover
+{
+  text-decoration: none;
+}
+
+a:visited, a:active
+{
+  border: none;
+  text-decoration: none;
+}
+
+strong
+{
+  font-weight: bold;
+}
+
+img
+{
+  border: none;
+}
+
+/* Template */
+
+html, body
+{
+  background-color: #FFFFFF;
+}
+
+div#page
+{  
+  background-color: #FFFFFF;
+}
+
+div.page-section
+{  
+  width: 980px;
+  margin: 0 auto;
+}
+
+/* Header */
+
+div #top-bar
+{
+	/*height: 3px;
+	background-color: #000000; */
+}
+
+div#header
+{  
+  background-color: #FFFFFF;
+}
+
+div#header-inner
+{
+  padding: 15px 10px 15px 11px;
+  height: 52px;
+  position: relative;
+}
+
+div#header-title
+{
+  font-family: Tahoma, Sans-Serif;
+  font-size: 28pt; 
+  font-weight: bold;
+}
+
+div#user-info-container
+{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border: 1px solid #BBBBBB;
+}
+
+div#user-info
+{
+  padding: 6px;  
+}
+
+div#user-login label
+{
+  width: 50px;
+  padding-right: 4px;
+  float: left;
+  text-align: right; 
+  display: block;
+  vertical-align: center;
+  padding-top: 3px;
+  
+  font-family: Tahoma, Sans-Serif;
+  font-size: 10px; 
+  font-weight: bold;
+}
+
+div#user-login input
+{
+  width: 180px;
+  margin-right: 40px;
+  display: block;
+  
+  margin-bottom: 4px;
+}
+
+
+
+
+
+
+
+
+
+/* Main Page Content */
+
+div#content
+{
+	padding: 20px 0 6px 0;
+  background-color: #FFFFFF;
+}
+
+div#content-inner
+{
+
+}
+
+div.content-page
+{
+  padding: 20px 0 0 0;
+}
+
+div.content-section
+{
+  padding: 15px 0;
+	margin-bottom: 15px;
+}
+
+
+div.content-separator
+{
+	margin-bottom: 20px;	
+}
+
+div#content h1 
+{
+  font-family: Tahoma, Sans-Serif;
+  font-size: 12pt;  
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 8px;
+}
+
+/* Tables */
+
+div.table-container 
+{
+  width: 100%;
+  padding: 0;
+  margin: 0 0 5px 0;
+}
+
+table.data-listing
+{
+  font-family: Arial, Helvetica, Sans-Serif;
+  font-size: 8pt; 
+  clear: both;
+	border-collapse:collapse;
+  width: 100%;
+}
+
+table.sortable
+{
+  font-family: Arial, Helvetica, Sans-Serif;
+  font-size: 8pt; 
+  clear: both;
+	border-collapse:collapse;
+}
+
+table.data-listing thead th
+{
+  font-weight: bold;
+  text-align: left;
+  color: #FFFFFF;
+  background-color: #222255; 
+
+  padding: 5px 10px 6px 10px;
+}
+
+table.data-listing thead th.icon
+{
+  text-align: left;
+  padding: 5px 5px;
+}
+
+table.data-listing thead th.icon-first
+{
+  text-align: left;  
+  padding: 5px 0 5px 5px;
+}
+
+table.data-listing thead th.headerSortUp
+{
+  background-image: url('/images/sort-ascending.png');
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+table.data-listing thead th.headerSortDown
+{
+  background-image: url('/images/sort-descending.png');
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+table.sortable thead th:hover
+{
+	background-color: #4A4A4A;	
+	cursor: pointer;
+}
+
+table.data-listing thead th.checkbox
+{
+  padding: 5px 1px 2px 4px;
+  width: 16px;
+	cursor: auto;
+	background-color: #5A5A5A; 
+}
+
+table.data-listing thead th.nosort:hover
+{
+	background-color: #5A5A5A; 
+	cursor: auto;
+}
+
+table.data-listing tr:hover
+{
+	/*background-color: #EEEEEE;*/
+}
+
+table.data-listing td
+{
+  color: #27262C;
+	
+	border-top: 1px solid #E3E3E3;
+	border-bottom: 1px solid #E3E3E3;
+	
+  padding: 5px 10px;
+}
+
+table.data-listing td.checkbox
+{
+	padding: 5px 1px 2px 4px;
+  background-color: #EEEEEE;
+  width: 16px;
+}
+
+table.data-listing td.icon-first
+{
+  padding: 4px 0 0 5px;
+  background-color: #EEEEEE;
+  vertical-align: middle;
+}
+
+table.data-listing td.icon
+{
+  padding: 4px 5px 0 5px;
+  background-color: #EEEEEE;
+  vertical-align: middle;
+}
+
+table.data-listing td a
+{	
+  color: #777777; 
+}
+
+table.data-listing td a:hover
+{
+	color: #D86803;  
+  text-decoration: underline;
+}
+
+div.table-footer
+{
+  background-color: #EEEEEE;  
+}
+
+div.table-footer p
+{
+  font-family: Arial, Helvetica, Sans-Serif;
+  font-size: 8pt; 
+  margin: 0;
+  padding: 5px 0 5px 5px;
+}
+
+
+
+
+
+button
+{
+  border: 1px solid #BBBBBB;
+  background-color: #DDDDDD;
+  padding: 3px 5px; 
+  width: 100%;
+  font-size: 10px;
+	font-family: Arial, Helvetica, Sans-Serif; 
+}
+
+button:hover
+{
+  border: 1px solid #CCCCCC;
+  background-color: #EEEEEE; 
+}
+
+
+
+
+
+
+
+
+div#footer
+{ 
+  text-align: center;
+    
+  background-color: #FFFFFF;
+  padding: 10px;  
+}
+
+
