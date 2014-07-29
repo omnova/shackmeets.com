@@ -19,8 +19,11 @@
       <?php
 
       $nags = array("Hey look it's fixed", "It's fixed. Happy now?", "Look at me, I'm all fixed!", "Mmm mm mm mm mmmm fixed.", "Fixed.  I hate you.", "It's fixed, jerk.", "Super duper fixed deluxe gaiden!");
+      $hirezIsATwat = array('I hate you.', 'Idiot.', 'You picked the wrong fight, buddy.', 'Is this annoying?  Good.', 'Why do you ruin everything?');
 
       if (strtolower($current_user->username) == 'laurgasms') echo "alert(\"" . $nags[rand(0, 6)] . "\")";
+
+      if (strtolower($current_user->username) == 'hirez') echo "alert(\"" . $hirezIsATwat[rand(0, 5)] . "\")";
 
       ?>
 
@@ -44,7 +47,7 @@
             <h1><a href="<?php echo Url::site(''); ?>"><img src="/images/shackmeets_logo.png" /></a></h1>
 						<ul id="header-buttons">
               <?php if ($current_user != null): ?>
-							<li>Logged in as <?php echo $current_user->username; ?></li>
+							<li>Logged in as <?php echo $current_user->username; ?><?php if ($current_user != null && strtolower($current_user->username) == 'hirez') echo ' (idiot)'; ?></li>
 							<li><a id="preferences" href="<?php echo Url::site('preferences', null, false); ?>">Preferences</a></li>
 							<li><a id="logout">Log out</a></li>
               <?php else: ?>

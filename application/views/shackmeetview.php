@@ -170,9 +170,17 @@ function Linkify(inputText) {
                   echo '<strong>';
                   
                 ?><a href="http://chattyprofil.es/p/<?php echo urlencode($attendee['username']); ?>" target="_blank"><?php echo htmlentities($attendee['username']); ?></a><?php 
-                
+
+                if (strtolower($attendee['username']) == 'hirez')
+                  echo ' (idiot)';
+
                 if ($attendee['extra_attendees'] > 0)
+                {
                   echo ' +' . $attendee['extra_attendees'];
+
+                  if (strtolower($attendee['username']) == 'hirez')
+                    echo ' stupid hobos';
+                }
                 
                 if ($current_user != null && $current_user->username == $attendee['username'])
                   echo '</strong>';
@@ -193,11 +201,19 @@ function Linkify(inputText) {
                 if ($current_user != null && $current_user->username == $attendee['username'])
                   echo '<strong>';
                   
-                ?><a href="http://chattyprofil.es/p/<?php echo urlencode($attendee['username']); ?>" target="_blank"><?php echo htmlentities($attendee['username']); ?></a><?php 
-                
+                ?><a href="http://chattyprofil.es/p/<?php echo urlencode($attendee['username']); ?>" target="_blank"><?php echo htmlentities($attendee['username']); ?></a><?php
+
+                if (strtolower($attendee['username']) == 'hirez')
+                  echo ' (idiot)';
+
                 if ($attendee['extra_attendees'] > 0)
+                {
                   echo ' +' . $attendee['extra_attendees'];
-                
+
+                  if (strtolower($attendee['username']) == 'hirez')
+                    echo ' stupid hobos';
+                }
+
                 if ($current_user != null && $current_user->username == $attendee['username'])
                   echo '</strong>';
                   

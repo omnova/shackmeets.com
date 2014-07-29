@@ -624,9 +624,19 @@ class Controller_Ajax_Shackmeet extends Controller_Ajax_Base
     $bullshit_fixed[25] = "Explosions in space would actually be silent, but here they sound an awful lot like \"You're retarded.\"";
     $bullshit_fixed[23] = "Michael Jordan just slam dunked all over you ass.";
     $bullshit_fixed[11] = "Okay, you're getting warmer now";
-    $bullshit_fixed[10] = "I can feel it.  You're almost there.";    
-    
-    
+    $bullshit_fixed[10] = "I can feel it.  You're almost there.";
+
+    // hirez specific
+    $bullshit_fixed[9] = "Your joke is stupid.";
+    $bullshit_fixed[8] = "Take your damn hobos and go home.";
+    $bullshit_fixed[7] = "Three years. Played out.";
+    $bullshit_fixed[6] = "Deal with it.";
+    $bullshit_fixed[5] = "You are why we can't have nice things.";
+    $bullshit_fixed[4] = "Awwwww poor baby can't bring more friends.";
+    $bullshit_fixed[3] = "That's right, you can't even have three friends. Sucker.";
+    $bullshit_fixed[2] = "I hope you've learned your lesson. Fun police always win.";
+
+
     // Random set
     $bullshit_random = array();
     $bullshit_random[0] = "Stop trying to pretend you have more than two friends.  That's being generous.";
@@ -658,7 +668,7 @@ class Controller_Ajax_Shackmeet extends Controller_Ajax_Base
     {
       if (!is_numeric($inputs['extra_attendees']) || $inputs['extra_attendees'] < 0)      
         $ajax_response->add_error('extra_attendees', null, null, 'Additional Guests must be a non-negative number.');	
-      else if ($inputs['extra_attendees'] > 9)
+      else if ($inputs['extra_attendees'] > 9 || ($this->current_user->username == 'hirez' && $inputs['extra_attendees'] > 1))
       {
         if (array_key_exists($inputs['extra_attendees'], $bullshit_fixed))
           $ajax_response->add_error('extra_attendees', null, null, $bullshit_fixed[$inputs['extra_attendees']]);	
