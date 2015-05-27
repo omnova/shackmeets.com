@@ -106,11 +106,11 @@ function Linkify(inputText) {
         <label>RSVP</label>
           
         <?php if ($current_attendee == null || $current_attendee->attendance_option_id == 0): ?>
-          <a id="attendance" class="button"> Not Attending</a>
+          <a id="attendance" class="button"> Not Attending <img style="padding-bottom: 1px; margin-left: 3px;" src="<?php echo Url::site('images/button_arrow.png'); ?>"/></a>
         <?php elseif ($current_attendee->attendance_option_id == 1): ?>
-          <a id="attendance" class="button"> Possibly Attending<?php if ($current_attendee->extra_attendees > 0) echo ' +' . $current_attendee->extra_attendees; ?></a>
+          <a id="attendance" class="button"> Possibly Attending<?php if ($current_attendee->extra_attendees > 0) echo ' +' . $current_attendee->extra_attendees; ?> <img style="padding-bottom: 1px; margin-left: 3px;" src="<?php echo Url::site('images/button_arrow.png'); ?>"/></a>
         <?php elseif ($current_attendee->attendance_option_id == 2): ?>      
-          <a id="attendance" class="button"> Definitely Attending<?php if ($current_attendee->extra_attendees > 0) echo ' +' . $current_attendee->extra_attendees; ?></a>
+          <a id="attendance" class="button"> Definitely Attending<?php if ($current_attendee->extra_attendees > 0) echo ' +' . $current_attendee->extra_attendees; ?> <img style="padding-bottom: 1px; margin-left: 3px;" src="<?php echo Url::site('images/button_arrow.png'); ?>"/></a>
         <?php endif; ?>
         
         <?php if ($current_user != null && $current_user->username == $shackmeet->organizer): ?>
