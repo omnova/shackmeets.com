@@ -5,25 +5,39 @@ return array
 	'default' => array
 	(
 		'type'       => 'mysql',
-		'connection' => array(
+    'connection' => array(
 			/**
-			 * The following options are available for MySQL:
+			 * The following options are available for PDO:
 			 *
-			 * string   hostname     server hostname, or socket
-			 * string   database     database name
-			 * string   username     database username
-			 * string   password     database password
-			 * boolean  persistent   use persistent connections?
-			 * array    variables    system variables as "key => value" pairs
-			 *
-			 * Ports and sockets may be appended to the hostname.
+			 * string   dsn         Data Source Name
+			 * string   username    database username
+			 * string   password    database password
+			 * boolean  persistent  use persistent connections?
 			 */
-			'hostname'   => Shackmeetsconfig::dbHostname,
-			'database'   => Shackmeetsconfig::dbDatabase,
+			'dsn'        => 'mysql:host=' . Shackmeetsconfig::dbHostname . ';dbname=' . Shackmeetsconfig::dbDatabase,
 			'username'   => Shackmeetsconfig::dbUsername,
 			'password'   => Shackmeetsconfig::dbPassword,
 			'persistent' => FALSE,
 		),
+		// 'connection' => array(
+			// /**
+			 // * The following options are available for MySQL:
+			 // *
+			 // * string   hostname     server hostname, or socket
+			 // * string   database     database name
+			 // * string   username     database username
+			 // * string   password     database password
+			 // * boolean  persistent   use persistent connections?
+			 // * array    variables    system variables as "key => value" pairs
+			 // *
+			 // * Ports and sockets may be appended to the hostname.
+			 // */
+			// 'hostname'   => Shackmeetsconfig::dbHostname,
+			// 'database'   => Shackmeetsconfig::dbDatabase,
+			// 'username'   => Shackmeetsconfig::dbUsername,
+			// 'password'   => Shackmeetsconfig::dbPassword,
+			// 'persistent' => FALSE,
+		// ),
 		'table_prefix' => '',
 		'charset'      => 'utf8',
 		'caching'      => FALSE,
